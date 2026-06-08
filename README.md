@@ -1,72 +1,96 @@
-# Air Canvas – Hand Gesture Drawing App
+# Air Canvas 🎨
 
-**Creator:** tubakhxn
+A real-time virtual drawing application that allows users to draw in the air using hand gestures detected through a webcam.
 
-Air Canvas turns your webcam into an invisible paintbrush. Wave your hand in mid-air and watch smooth digital ink appear in real time, powered by OpenCV for video capture and MediaPipe Hands for landmark tracking.
+## 📌 Project Overview
 
-## Features
-- Real-time hand landmark detection with finger skeleton overlays
-- Gesture-controlled drawing: point to draw, make a fist to pause, show an open palm to clear
-- Smooth, anti-aliased strokes and a live cursor indicator for precise control
-- Dual-window display: augmented webcam feed plus a dedicated canvas view
-- Graceful handling of webcam availability and keyboard interrupt exits
+Air Canvas is a computer vision-based application that tracks hand movements and recognizes gestures using MediaPipe and OpenCV. Users can draw on a virtual canvas without touching any physical device.
 
-## Requirements
-- Python 3.10 or newer
-- Webcam or USB camera compatible with OpenCV
-- pip for dependency management
+## 🚀 Features
 
-## Installation
-```bash
-python -m venv .venv
-.venv\Scripts\activate  # On macOS/Linux use: source .venv/bin/activate
-python -m pip install --upgrade pip
-python -m pip install -r requirements.txt
+* Real-time hand tracking
+* Air drawing using index finger gestures
+* Gesture-based drawing control
+* Canvas clearing using hand gestures
+* Smooth cursor movement
+* Webcam-based interaction
+
+## 🛠️ Technologies Used
+
+* Python 3.11
+* OpenCV
+* MediaPipe Hands
+* NumPy
+
+## 📂 Project Structure
+
+```text
+air-canvas-main/
+│
+├── main.py
+├── gesture_detector.py
+├── canvas.py
+├── utils.py
+├── requirements.txt
+└── README.md
 ```
 
-## Run the App
+## ⚙️ Installation
+
+1. Clone the repository:
+
+```bash
+git clone https://github.com/divyankasri/Air-canvas.git
+```
+
+2. Navigate to the project folder:
+
+```bash
+cd Air-canvas
+```
+
+3. Create and activate a virtual environment:
+
+```bash
+python -m venv .venv
+```
+
+4. Install dependencies:
+
+```bash
+pip install -r requirements.txt
+```
+
+5. Run the application:
+
 ```bash
 python main.py
 ```
-Press `q` in the Air Canvas window to exit.
 
-## Gesture Mapping
-| Gesture | How | Action |
-| --- | --- | --- |
-| Draw | Extend the index finger while folding the rest | Paint continuous strokes |
-| Pause | Form a fist (all fingers folded) | Lift the digital pen without clearing the canvas |
-| Clear | Display an open palm (all fingers extended) | Reset the canvas to start over |
+## 🎮 Controls
 
-## Tips & Troubleshooting
-- Ensure good, even lighting so MediaPipe can detect landmarks reliably.
-- If the wrong gesture triggers, keep your hand within the frame and slow down transitions between poses.
-- Strokes follow the index finger tip; move the whole hand rather than bending only the finger for smoother curves.
-- If the webcam cannot be opened, close other apps that may be using it and rerun `python main.py`.
+| Gesture         | Action       |
+| --------------- | ------------ |
+| Index Finger Up | Draw         |
+| Fist            | Stop Drawing |
+| Open Palm       | Clear Canvas |
 
-## Folder Structure
-```
-air-canvas/
-├── main.py              # Application entry point & UI loop
-├── gesture_detector.py  # MediaPipe Hands wrapper + gesture logic
-├── canvas.py            # Canvas class for persistent drawing
-├── utils.py             # Helper utilities for rendering overlays
-├── requirements.txt     # Runtime dependencies
-└── README.md            # Project guide
-```
+## 🔮 Future Enhancements
 
-Add your own screenshots or GIFs of the running app directly to this README to showcase results.
+* Multiple brush colors
+* Brush size adjustment
+* Eraser tool
+* Save drawings as images
+* Gesture customization
 
-## Fork & Extend the Project
-1. Visit the GitHub repository and click **Fork** to copy it to your account.
-2. Clone your fork locally: `git clone https://github.com/<your-username>/air-canvas.git`.
-3. Add the original project as an upstream remote for easy syncing:
-	```bash
-	git remote add upstream https://github.com/tubakhxn/air-canvas.git
-	git fetch upstream
-	git checkout main
-	git merge upstream/main
-	```
-4. Create a feature branch (`git checkout -b feature/new-gesture`), implement changes, and push to your fork.
-5. Open a pull request against `tubakhxn/air-canvas` to share improvements.
+## 👩‍💻 Author
 
-Issues and enhancements are welcome—keep the gestures flowing!
+**Divyanka Srivastava**
+
+B.Tech Computer Science Engineering
+Jaipur National University
+
+## 📄 License
+
+This project is created for educational and learning purposes.
+
